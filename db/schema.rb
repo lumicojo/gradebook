@@ -12,10 +12,12 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_03_13_205350) do
   create_table "grades", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "semester"
-  end
+    create_table "grades", force: :cascade do |t|
+      t.string "name"
+      t.string "course"
+      t.string "assignment"
+      t.integer "grade"
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
+    end
 
-end
